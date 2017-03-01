@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rel_lunBo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffed">
+
+        <com.wcy.education.view.Image3DSwitchView
+
+            android:id="@+id/image_switch_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x140">
+
+
+            <com.wcy.education.view.Image3DView
+                android:id="@+id/image1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/image3" />
+
+            <com.wcy.education.view.Image3DView
+                android:id="@+id/image2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/image2" />
+
+            <com.wcy.education.view.Image3DView
+                android:id="@+id/image3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/image1" />
+
+            <com.wcy.education.view.Image3DView
+                android:id="@+id/image4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/image3" />
+
+            <com.wcy.education.view.Image3DView
+                android:id="@+id/image5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/image2" />
+
+            <com.wcy.education.view.Image3DView
+                android:id="@+id/image6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/image1" />
+
+            <com.wcy.education.view.Image3DView
+                android:id="@+id/image7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/image2" />
+        </com.wcy.education.view.Image3DSwitchView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/mine_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+</LinearLayout>

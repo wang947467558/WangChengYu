@@ -1,0 +1,76 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+    defaultConfig {
+        applicationId "com.wcy.education"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+//    signingConfigs {
+//        debug {
+//            storeFile file('education2.jks')
+//            storePassword "android"
+//            keyAlias "androiddebugkey"
+//            keyPassword "android"
+//        }
+//    }
+//发布到各个渠道
+    /*
+    *    其中[UMENG_CHANNEL_VALUE: "wandoujia"]就是对应${UMENG_CHANNEL_VALUE}的值。
+    * */
+    productFlavors {
+
+        wandoujia {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"]
+        }
+
+        baidu {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "baidu"]
+        }
+
+        c360 {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "c360"]
+        }
+
+        uc {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "uc"]
+        }
+    }
+
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    testCompile 'junit:junit:4.12'
+    //图片加载
+    compile files('libs/universal-image-loader-1.9.5.jar')
+    //andBase框架
+    compile files('libs/andbase.jar')
+    //RecyclerView
+    compile 'com.android.support:design:23.2.1'
+    //butterknife小刀
+    compile 'com.jakewharton:butterknife:7.0.0'
+    compile files('libs/org.apache.http.legacy.jar')
+    //友盟
+    compile 'com.umeng.analytics:analytics:latest.integration'
+    //图片缓存
+    compile files('libs/glide-3.7.0.jar')
+}
